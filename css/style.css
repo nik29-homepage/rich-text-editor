@@ -11,14 +11,28 @@ form {
 }
 .intLink { cursor: pointer; }
 img.intLink { border: 0; }
-#toolBar1 select {
+#toolBar1 select, #toolBar1 button {
     font-family: 'Inter', sans-serif;
     font-family: 18px;
+    box-sizing: border-box;
+    height: 26px;
     padding: 4px 6px;
     border: 1px solid #c0c0c0;
     border-radius: 0;
     background-color: #f0f0f0;
     cursor: pointer;
+}
+#toolBar1 label {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+input[type="color"] {
+    box-sizing: border-box;
+    height: 26px;
+    padding: 0;
+    border: 1px solid #c0c0c0;
+    border-radius: 0;
+    vertical-align: bottom;
 }
 #toolBar2 {
     margin-top: 8px;
@@ -49,7 +63,7 @@ img.intLink { border: 0; }
     cursor: pointer;
     font-family: 'Fira Sans', sans-serif;
 }
-button {
+button[onclick="codeCopy();"] {
     color: #fff;
     font-family: 'Fira Sans', sans-serif;
     font-size: 18px;

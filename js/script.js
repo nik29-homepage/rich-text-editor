@@ -1,5 +1,20 @@
 var oDoc, sDefTxt;
 
+$(function() {
+    shortcut.add("Ctrl+B",function() {
+        formatDoc('bold');
+    });
+    shortcut.add("Ctrl+I",function() {
+        formatDoc('italic');
+    });
+    shortcut.add("Ctrl+U",function() {
+        formatDoc('underline');
+    });
+    shortcut.add("Ctrl+K",function() {
+        $('[title="Hyperlink"]').trigger('click');;
+    });
+});
+
 function initDoc() {
   oDoc = document.getElementById("textBox");
   sDefTxt = oDoc.innerHTML;
@@ -50,20 +65,11 @@ function printDoc() {
   oPrntWin.document.close();
 }
 
-$(function() {
-    shortcut.add("Ctrl+B",function() {
-        formatDoc('bold');
-    });
-    shortcut.add("Ctrl+I",function() {
-        formatDoc('italic');
-    });
-    shortcut.add("Ctrl+U",function() {
-        formatDoc('underline');
-    });
-    shortcut.add("Ctrl+K",function() {
-        $('[title="Hyperlink"]').trigger('click');;
-    });
-});
+function resizing() {
+    let size = window.prompt('Please enter a valid number.');
+    formatDoc('fontsize',size); $('button[onclick="resizing();"]').selectedIndex=0;
+    $('button[onclick="resizing();"]').text('Size: ' + size + 'px');
+}
 
 function codeCopy() {
     $('#switchBox').prop('checked', true);

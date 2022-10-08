@@ -14,7 +14,7 @@
 <body onload="initDoc();">
         <input type="hidden" name="myDoc">
         <div id="toolBar1">
-            <select onchange="formatDoc('formatblock',this[this.selectedIndex].value);this.selectedIndex=0;">
+            <select onchange="formatDoc('formatblock',this[this.selectedIndex].value); this.selectedIndex=0;">
                 <option selected>Formatting</option>
                 <option value="h1">Title 1 &lt;h1&gt;</option>
                 <option value="h2">Title 2 &lt;h2&gt;</option>
@@ -32,29 +32,9 @@
                 <option style="font-family: 'Courier New', serif;">Courier New</option>
                 <option style="font-family: 'Times New Roman', serif;">Times New Roman</option>
             </select>
-            <select onchange="formatDoc('fontsize',this[this.selectedIndex].value);this.selectedIndex=0;">
-                <option class="heading" selected>Size</option>
-                <option value="1">Very small</option>
-                <option value="2">A bit small</option>
-                <option value="3">Normal</option>
-                <option value="4">Medium-large</option>
-                <option value="5">Big</option>
-                <option value="6">Very big</option>
-                <option value="7">Maximum</option>
-            </select>
-            <select onchange="formatDoc('forecolor',this[this.selectedIndex].value);this.selectedIndex=0;">
-                <option class="heading" selected>Color</option>
-                <option value="red" style="color: #f00;">Red</option>
-                <option value="blue" style="color: #00f;">Blue</option>
-                <option value="green" style="color: #0f0;">Green</option>
-                <option value="black" style="color: #000;">Black</option>
-            </select>
-            <select onchange="formatDoc('backcolor',this[this.selectedIndex].value);this.selectedIndex=0;">
-                <option class="heading" selected>Background</option>
-                <option value="red" style="color: #f00;">Red</option>
-                <option value="green" style="color: #0f0;">Green</option>
-                <option value="black" style="color: #000;">Black</option>
-            </select>
+            <button onclick="resizing();">Size: 16px</button>
+            <label for="color">Color: <input type="color" name="color" onchange="formatDoc('forecolor',this.value);this.selectedIndex=0;"></label>
+            <label for="background">Background: <input type="color" name="background" onchange="formatDoc('backcolor',this.value);this.selectedIndex=0;"></label>
         </div>
         <div id="toolBar2">
             <img class="intLink" title="Clean" onclick="if(validateMode()&&confirm('Are you sure?')){oDoc.innerHTML=sDefTxt};" src="./img/icons/mop_FILL0_wght400_GRAD0_opsz20.svg" />
