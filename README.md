@@ -13,10 +13,9 @@ Note: that the extension when saved is HTML.
 
 ## Future Implementation Plans
 - Inserting images
-- Change text and background color from color picker
-- Font size change from numerical values
 - Use of Web fonts
 - Use of new tags and attributes
+- Explicit selection values
 
 *Translated by DeepL*  
 *Japanese to English*
